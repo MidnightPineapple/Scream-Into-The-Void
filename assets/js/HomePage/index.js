@@ -109,7 +109,7 @@ var app = new Vue({
     },
     methods: {
         onMessage: function(msg) {
-            this.messages.push({ ...msg, sent:false } );
+            this.messages.unshift({ ...msg, sent:false } );
         },
     },
     created: function() {
@@ -118,7 +118,7 @@ var app = new Vue({
         // Getting Initial Messages
         fetch("/message").then(function(res){ return res.json() })
         .then((function(res) { 
-            res.forEach( (function(v) {this.messages.push(v)}).bind(this) ) 
+            this.messages = res.reverse(); 
             this.loading = false;
         }).bind(this))
 
@@ -131,7 +131,7 @@ var app = new Vue({
                     match.sent = true;
                 } else {
                     // if we haven't seen this message yet, push it onto the array of messages
-                    this.messages.push({ ...res, sent:true })
+                    this.messages.unshift({ ...res, sent:true })
                 }
             }).bind(this))
         }).bind(this))
