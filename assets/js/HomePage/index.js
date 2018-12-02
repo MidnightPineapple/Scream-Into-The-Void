@@ -77,7 +77,7 @@ Vue.component("message-display", {
         </ul>
         <button @click="toggleActive">{{ active?"ignore":"listen to" }} echoes of the void...</button>
     </div>`,
-    props: [ "messages", "active" ],
+    props: [ "messages" ],
     data: () => ({
         active:false
     }),
