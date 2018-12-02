@@ -17,7 +17,8 @@
     "sails-mysql": "^1.0.1"
   },
   "devDependencies": {
-    "@sailshq/eslint": "^4.19.3"
+    "@sailshq/eslint": "^4.19.3",
+    "deep-extend": "0.5.1"
   },
   "scripts": {
     "start": "nodemon sails lift",
