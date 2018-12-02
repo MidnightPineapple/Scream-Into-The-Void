@@ -1,0 +1,9 @@
+<div id="app">
+  <particles-js></particles-js>
+  
+  <message-display 
+  :messages="messages" 
+  :active="modalOpen"></message-display>
+  
+  <text-entry @message = "onMessage" :screen-name = "screenName" />
+</div>
